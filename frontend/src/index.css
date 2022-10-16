@@ -368,7 +368,7 @@ details[open] summary ~ * {
 
 @media screen and (max-width: 510px) {
   .app {
-    min-height: 740px;
+    min-height: 780px;
     width: 100%;
     min-width: 340px;
     padding: 0;

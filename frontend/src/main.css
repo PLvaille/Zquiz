@@ -2,9 +2,7 @@ body {
   /* #7cc6fe */
   background-color: #8db1cc;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
- "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
- sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -418,6 +416,8 @@ details > summary::-webkit-details-marker {
 
 .score-points-text {
   text-align: center;
+  margin: 0 auto;
+  width: 90%;
 }
 
 @-webkit-keyframes sweep {
@@ -524,11 +524,19 @@ details[open] summary ~ * {
     max-width: 300px;
   }
   .welcome-bg {
+    background-image: url("https://ampoule.mobi/wp-content/uploads/2019/07/amppuissante.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
     width: 100%;
+    background-clip: unset;
   }
   .welcome-text {
+    color: #555e7d;
     letter-spacing: -2px;
     font-size: 150px;
+  }
+  .welcome-main {
+    width: 100%;
   }
   .answeroption-btn {
     width: 300px;

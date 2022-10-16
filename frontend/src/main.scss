@@ -301,6 +301,8 @@ body {
   }
   .score-points-text {
     text-align: center;
+    margin: 0 auto;
+    width: 90%;
   }
   
   @keyframes sweep {
@@ -380,11 +382,19 @@ body {
       max-width: 300px;
     }
     .welcome-bg {
+        background-image: url("https://ampoule.mobi/wp-content/uploads/2019/07/amppuissante.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
       width: 100%;
+      background-clip: unset;
     }
     .welcome-text {
+        color:#555e7d;
       letter-spacing: -2px;
       font-size: 150px;
+    }
+    .welcome-main {
+        width: 100%;
     }
   
     .answeroption-btn {

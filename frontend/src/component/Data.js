@@ -211,8 +211,8 @@ const questions = [
     answerOptions: [
       { answerText: "Virgin Mobile", isCorrect: false },
       { answerText: "Virgin Galactic", isCorrect: false },
-      { answerText: "Virgin Atlantic ", isCorrect: false },
-      { answerText: "Virgin Aerospace", isCorrect: true },
+      { answerText: "Virgin Atlantic ", isCorrect: true },
+      { answerText: "Virgin Aerospace", isCorrect: false },
     ],
   },
   {
@@ -223,9 +223,9 @@ const questions = [
     img : "http://www.blogangelio.ovh/wp-content/uploads/2017/01/tv-remote-control.jpg",
     answerOptions: [
       { answerText: "Disney", isCorrect: false },
-      { answerText: "Netflix", isCorrect: false },
+      { answerText: "Netflix", isCorrect: true },
       { answerText: "Warner Bros", isCorrect: false },
-      { answerText: "Amazon", isCorrect: true },
+      { answerText: "Amazon", isCorrect: false },
     ],
   },
   {

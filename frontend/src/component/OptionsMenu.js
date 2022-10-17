@@ -88,10 +88,10 @@ export default function OptionsMenu({
 
 
   return (
-    <div className="questions-options-container">
+    <div className="options-container">
       <h1>Options du Quiz</h1>
-      <div className="questions-options-menu">
-        <div className="questions-categories-list">
+      <div className="options-menu">
+        <div className="options-categories-list">
           <h2>Thèmes des questions</h2>
           {questionsTypes.map((cat) => (
             <div key={cat} className="checkbox-option">
@@ -111,7 +111,7 @@ export default function OptionsMenu({
           ))}
         </div>
 
-        <div className="questions-categories-list">
+        <div className="options-categories-list">
           <h2>Difficulté des questions</h2>
           {questionsDifficulties.map((diff) => (
             <div key={diff} className="checkbox-option">

@@ -236,7 +236,7 @@ const questions = [
     img : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG5BKLMTwW2SZ59yd4VOwgbSEnYKrvEW_HsQ&usqp=CAU",
     answerOptions: [
       { answerText: "Spatial", isCorrect: true },
-      { answerText: "Deep diving", isCorrect: false },
+      { answerText: "Plongée sous-marine", isCorrect: false },
       { answerText: "Génétique", isCorrect: false },
       { answerText: "Militaire", isCorrect: false },
     ],
@@ -263,8 +263,8 @@ const questions = [
     answerOptions: [
       { answerText: "Une IA", isCorrect: false },
       { answerText: "Un Robot", isCorrect: false },
-      { answerText: "Un super calculateur", isCorrect: true },
-      { answerText: "Un héro", isCorrect: false },
+      { answerText: "Un Super calculateur", isCorrect: true },
+      { answerText: "Un Logiciel", isCorrect: false },
     ],
   },
   {

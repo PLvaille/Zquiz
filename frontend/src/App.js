@@ -61,7 +61,7 @@ export default function App() {
   return (
     <div className="app">
       {play ? (
-        <div>
+        <div className="main-container">
           {userReady ? (
             <Quiz
             iconCat={iconCat}

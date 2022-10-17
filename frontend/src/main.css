@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*ancien bleu foncé #252d4a; */
 body {
-  height: 100vh;
+  min-height: 100vh;
   background-color: #7cc6fe;
   background: -webkit-gradient(linear, left top, left bottom, from(#00ffed), color-stop(10%, #7cc6fe));
   background: linear-gradient(#00ffed, #7cc6fe 10%);

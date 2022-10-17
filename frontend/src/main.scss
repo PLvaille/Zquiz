@@ -14,7 +14,7 @@ $neon3: rgba(0, 255, 237, 1);
 $neon4: rgba(157, 0, 198, 1);
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   background-color: $colorprimary;
   background: linear-gradient($neon3, $colorprimary 10%);
   margin: 0;

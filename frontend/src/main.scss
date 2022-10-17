@@ -63,6 +63,7 @@ body {
   }
   &-bg {
     position: relative;
+    top:40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,13 +74,15 @@ body {
     background-position-x: 1000%;
   }
   &-text {
+    top:10px;
     padding: 0;
     margin: 0;
     scale: 0;
-    animation: text_pop 1.6s ease 0.2s forwards;
+    
+    animation: text_pop 2.3s ease 0.2s forwards;
     position: relative;
     font-family: "Anton", sans-serif;
-    color: transparent;
+    color: white;
     font-size: 350px;
     letter-spacing: -8px;
   }
@@ -88,8 +91,19 @@ body {
 @keyframes text_pop {
   from {
     scale: 0;
+    top:-200px;
   }
-  to {
+  50%{
+    top:-100px;
+  }
+  70% {
+    color: white;
+  }
+
+
+  100% {
+    top:10px;
+    color:transparent;
     scale: 1;
   }
 }

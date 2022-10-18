@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Zquiz/static/css/main.b7437a75.css",
+    "main.css": "/Zquiz/static/css/main.580c510a.css",
     "main.js": "/Zquiz/static/js/main.2bc3d9d8.js",
     "static/js/787.fdefc428.chunk.js": "/Zquiz/static/js/787.fdefc428.chunk.js",
     "static/media/quizbg.webp": "/Zquiz/static/media/quizbg.7c622764acc8e413f250.webp",
@@ -14,12 +14,12 @@
     "static/media/mathematiques.svg": "/Zquiz/static/media/mathematiques.5452cdaa95d880f70859a1ef49042772.svg",
     "static/media/star.svg": "/Zquiz/static/media/star.0056da2f26e4ded4a40d48aa15546785.svg",
     "index.html": "/Zquiz/index.html",
-    "main.b7437a75.css.map": "/Zquiz/static/css/main.b7437a75.css.map",
+    "main.580c510a.css.map": "/Zquiz/static/css/main.580c510a.css.map",
     "main.2bc3d9d8.js.map": "/Zquiz/static/js/main.2bc3d9d8.js.map",
     "787.fdefc428.chunk.js.map": "/Zquiz/static/js/787.fdefc428.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b7437a75.css",
+    "static/css/main.580c510a.css",
     "static/js/main.2bc3d9d8.js"
   ]
 }

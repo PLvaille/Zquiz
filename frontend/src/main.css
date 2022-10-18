@@ -530,7 +530,7 @@ details > summary::-webkit-details-marker {
     }
     to {
       color: transparent;
-      top: 100px;
+      top: 110px;
     }
   }
   @keyframes text_translate_Y {
@@ -542,7 +542,7 @@ details > summary::-webkit-details-marker {
     }
     to {
       color: transparent;
-      top: 100px;
+      top: 110px;
     }
   }
   .app {
@@ -591,6 +591,26 @@ details > summary::-webkit-details-marker {
 }
 
 @media screen and (max-width: 510px) {
+  @-webkit-keyframes text_translate_Y {
+    0% {
+      opacity: 0;
+      top: -130px;
+    }
+    to {
+      opacity: 1;
+      top: 110px;
+    }
+  }
+  @keyframes text_translate_Y {
+    0% {
+      opacity: 0;
+      top: -130px;
+    }
+    to {
+      opacity: 1;
+      top: 110px;
+    }
+  }
   .app {
     min-height: 100vh;
     width: 100%;
@@ -611,6 +631,7 @@ details > summary::-webkit-details-marker {
     background-clip: unset;
   }
   .welcome-text {
+    opacity: 0;
     color: whitesmoke;
     letter-spacing: -2px;
     font-size: 150px;

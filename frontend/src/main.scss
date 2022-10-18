@@ -397,7 +397,7 @@ details > summary::-webkit-details-marker {
     }
     to {
       color:transparent;
-      top: 100px;
+      top: 110px;
     }
   }
 
@@ -433,7 +433,6 @@ details > summary::-webkit-details-marker {
   .welcome-text {
     top: -130px;
     scale: 1;
-    //animation: none;
     color:white;
     animation: text_translate_Y 2s ease 0.2s forwards;
     letter-spacing: -8px;
@@ -445,6 +444,17 @@ details > summary::-webkit-details-marker {
 ////////////////////////////////////////////
 
 @media screen and (max-width: 510px) {
+
+  @keyframes text_translate_Y {
+    0% {
+      opacity: 0;
+      top: -130px;
+    }
+    to {
+      opacity: 1;
+      top: 110px;
+    }
+  }
   .app {
     min-height: 100vh;
     width: 100%;
@@ -465,6 +475,7 @@ details > summary::-webkit-details-marker {
     background-clip: unset;
   }
   .welcome-text {
+    opacity: 0;
     color: $colorsecondary;
     letter-spacing: -2px;
     font-size: 150px;

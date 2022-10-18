@@ -272,8 +272,7 @@ body {
   align-items: center;
   cursor: pointer;
 
-  &:hover,
-  &:focus {
+  &:hover {
     box-shadow: 2px 3px transparent;
     background: linear-gradient($colorquater, $colorquater) padding-box,
       linear-gradient(45deg, purple, orange) border-box;
@@ -389,10 +388,15 @@ details > summary::-webkit-details-marker {
     height: fit-content;
   }
   @keyframes text_translate_Y {
-    from {
+    0% {
       top: -130px;
     }
+    70% {
+      color:white;
+
+    }
     to {
+      color:transparent;
       top: 100px;
     }
   }
@@ -429,7 +433,8 @@ details > summary::-webkit-details-marker {
   .welcome-text {
     top: -130px;
     scale: 1;
-    animation: none;
+    //animation: none;
+    color:white;
     animation: text_translate_Y 2s ease 0.2s forwards;
     letter-spacing: -8px;
     font-size: 180px;
@@ -469,7 +474,11 @@ details > summary::-webkit-details-marker {
   }
 
   .answeroption-btn {
-    width: 300px;
+    width: 270px;
+  }
+
+  .btn {
+   min-width: 270px;
   }
 
   .icon-category {

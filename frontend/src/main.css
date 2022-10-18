@@ -376,7 +376,7 @@ body {
   cursor: pointer;
 }
 
-.btn:hover, .btn:focus {
+.btn:hover {
   -webkit-box-shadow: 2px 3px transparent;
           box-shadow: 2px 3px transparent;
   background: linear-gradient(#19213c, #19213c) padding-box, linear-gradient(45deg, purple, orange) border-box;
@@ -522,18 +522,26 @@ details > summary::-webkit-details-marker {
     height: fit-content;
   }
   @-webkit-keyframes text_translate_Y {
-    from {
+    0% {
       top: -130px;
     }
+    70% {
+      color: white;
+    }
     to {
+      color: transparent;
       top: 100px;
     }
   }
   @keyframes text_translate_Y {
-    from {
+    0% {
       top: -130px;
     }
+    70% {
+      color: white;
+    }
     to {
+      color: transparent;
       top: 100px;
     }
   }
@@ -574,8 +582,7 @@ details > summary::-webkit-details-marker {
   .welcome-text {
     top: -130px;
     scale: 1;
-    -webkit-animation: none;
-            animation: none;
+    color: white;
     -webkit-animation: text_translate_Y 2s ease 0.2s forwards;
             animation: text_translate_Y 2s ease 0.2s forwards;
     letter-spacing: -8px;
@@ -612,7 +619,10 @@ details > summary::-webkit-details-marker {
     width: 100%;
   }
   .answeroption-btn {
-    width: 300px;
+    width: 270px;
+  }
+  .btn {
+    min-width: 270px;
   }
   .icon-category {
     width: 18px;

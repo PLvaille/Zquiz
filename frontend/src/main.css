@@ -301,6 +301,7 @@ body {
 }
 
 .alert-msg {
+  text-align: center;
   margin-top: 16x;
   color: red;
   text-shadow: 1px 1px black;

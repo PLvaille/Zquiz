@@ -55,7 +55,7 @@ export default function OptionsMenu({
     let indexQty = document.querySelector(
       ".options-questions-quantity"
     ).selectedIndex;
-    console.log(indexQty)
+    //console.log(indexQty)
 
     //cas ou aucune selection de checkbox
     if (
@@ -204,10 +204,10 @@ export default function OptionsMenu({
 
   return (
     <div className="options-container">
-      <h1>Peronnalisez votre Quiz</h1>
+      <h1>Options</h1>
       <div className="options-menu">
         <div className="options-categories-list">
-          <h2>Thèmes des questions</h2>
+          <h2>Thèmes </h2>
           {questionsTypes.map((cat) => (
             <div key={cat} className="checkbox-option">
               <input
@@ -228,7 +228,7 @@ export default function OptionsMenu({
         </div>
 
         <div className="options-categories-list">
-          <h2>Difficulté des questions</h2>
+          <h2>Difficulté</h2>
           {questionsDifficulties.map((diff) => (
             <div key={diff} className="checkbox-option">
               <input
@@ -267,11 +267,11 @@ export default function OptionsMenu({
                   id={qty}
                   className={"option-" + qtySelector.indexOf(qty)}
                 >
-                  {qty} questions
+                  {qty>1 ? `${qty} questions` : `${qty} question`}
                 </option>
               ))}
             </select>
-            <div>Total : {questionQty} questions</div>
+            <div className="options-total">Total : {questionQty} questions</div>
           </div>
         </div>
       </div>
@@ -282,7 +282,7 @@ export default function OptionsMenu({
         </span>
       ) : null}
       <button className="btn btn-ready" onClick={() => handleReadyClick()}>
-        Commencer
+        Quizzzz !
       </button>
     </div>
   );

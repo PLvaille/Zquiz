@@ -188,6 +188,18 @@ body {
   max-width: 330px;
 }
 
+.options-questions-quantity {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 120px;
+}
+
+.options-total {
+  margin-top: 24px;
+}
+
 .question-options-container {
   text-align: center;
   display: -webkit-box;
@@ -360,8 +372,6 @@ body {
           box-shadow: 2px 3px #333;
   font-size: 16px;
   color: rgba(245, 245, 245, 0.85);
-  background-color: #252d4a;
-  border: 5px solid #234668;
   background: linear-gradient(#020d31, #020d31) padding-box, linear-gradient(45deg, slateblue, coral) border-box;
   border: 5px solid transparent;
   border-radius: 15px;
@@ -375,9 +385,14 @@ body {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
+  -webkit-transition: all ease 1s;
+  transition: all ease 1s;
 }
 
 .btn:hover {
+  scale: 0.98;
+  -webkit-transition: all ease 1s;
+  transition: all ease 1s;
   -webkit-box-shadow: 2px 3px transparent;
           box-shadow: 2px 3px transparent;
   background: linear-gradient(#19213c, #19213c) padding-box, linear-gradient(45deg, purple, orange) border-box;
@@ -390,8 +405,10 @@ body {
 }
 
 .btn-reset {
+  max-width: 240px;
   text-align: center;
   margin-top: 32px;
+  padding: 10px;
 }
 
 .results-chart-container {
@@ -567,6 +584,12 @@ details > summary::-webkit-details-marker {
     min-width: 450px;
     margin: 42px auto 0;
   }
+  .options-categories-list h2 {
+    max-width: 225px;
+  }
+  .options-container h1 {
+    margin: -42px 0 0 0;
+  }
   .questions-options-menu {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -642,7 +665,7 @@ details > summary::-webkit-details-marker {
     opacity: 0;
     color: rgba(245, 245, 245, 0.85);
     letter-spacing: -2px;
-    font-size: 150px;
+    font-size: 132px;
   }
   .welcome-main {
     width: 100%;
@@ -651,23 +674,29 @@ details > summary::-webkit-details-marker {
     width: 270px;
   }
   .btn {
-    min-width: 270px;
+    min-width: 260px;
+    max-width: 280px;
   }
   .icon-category {
     width: 18px;
     height: 18px;
   }
   .options-menu {
-    padding: 0 16Px;
+    padding: 0;
+    margin-left: 24px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .options-container h1 {
+    margin: 32px 0 0 0;
   }
   .options-categories-list {
     margin: 0;
   }
   .options-categories-list h2 {
-    max-width: 250px;
-  }
-  .options-categories-list:first-child {
-    margin-right: 12px;
+    max-width: 300px;
   }
   .options-categories-list:nth-child(2) {
     -webkit-box-flex: 1;

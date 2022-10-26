@@ -85,11 +85,9 @@ export default function Quiz({
           </div> */}
           <div className="question-head">      
             <h1 className="question-type">
-            <img className="icon-question-head" src={iconCat(selectedQuestions[currentQuestion].questionType)} alt="icon"/> 
-            {"  "}
+            <img className="icon-question-head" src={iconCat(selectedQuestions[currentQuestion].questionType)} alt="icon"/>   
               {selectedQuestions[currentQuestion].questionType} 
               </h1>
-              
              <span className="question-difficulty"> {[...Array(selectedQuestions[currentQuestion].ease)].map((e, i) =>(
                 <img className="star-img" key={i} src={star} alt="star img" />
               ))}

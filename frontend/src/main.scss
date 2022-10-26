@@ -1,5 +1,5 @@
 $colorprimary: #7cc6fe;
-$colorsecondary: whitesmoke;
+$colorsecondary: rgba(245, 245, 245, 0.85);
 $colortertiary: #020d31;
 $colorquater: #19213c;
 //ter  1c3177
@@ -12,6 +12,7 @@ $neon1: rgba(1, 0, 236, 1);
 $neon2: rgba(248, 54, 244, 1);
 $neon3: rgba(0, 255, 237, 1);
 $neon4: rgba(157, 0, 198, 1);
+
 
 body {
   min-height: 100vh;
@@ -134,17 +135,15 @@ body {
     justify-content: space-around;
     text-align: left;
     margin: 32px 0;
-
   }
-  &-categories-list {
-    margin: 0 16px;
+  &-categories{
+    &-list {
+      & h2 {
+        max-width: 330px;
+      }
+    }
   }
 }
-
-// .input-questions-quantity > div{
-//   color:black;
-// }
-
 .question {
   &-options-container {
     text-align: center;
@@ -294,6 +293,18 @@ body {
     margin-top: 32px;
   }
 }
+//////////////////// reponses
+
+.results-chart{
+  &-container {
+    border:1px solid white;
+    border-radius: 15px;
+    padding:4px;
+    margin: auto auto;
+  }
+}
+
+
 
 .details {
   color: $colorsecondary !important;
@@ -360,7 +371,7 @@ details > summary::-webkit-details-marker {
   padding-top: 8px;
 }
 .score-details-label {
-  margin:4px auto;
+  margin:8px;
   padding:2px;
   background: $colorsecondary;
   border-radius: 15px;

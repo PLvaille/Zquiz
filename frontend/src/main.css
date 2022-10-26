@@ -20,8 +20,8 @@ body {
   -webkit-box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
           box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
   border: 2px solid transparent;
-  background: -webkit-gradient(linear, left top, left bottom, from(#020d31), to(#020d31)) padding-box, whitesmoke border-box;
-  background: linear-gradient(#020d31, #020d31) padding-box, whitesmoke border-box;
+  background: -webkit-gradient(linear, left top, left bottom, from(#020d31), to(#020d31)) padding-box, rgba(245, 245, 245, 0.85) border-box;
+  background: linear-gradient(#020d31, #020d31) padding-box, rgba(245, 245, 245, 0.85) border-box;
   width: 70%;
   min-width: 800px;
   min-height: 640px;
@@ -41,7 +41,7 @@ body {
 }
 
 .main-container {
-  color: whitesmoke;
+  color: rgba(245, 245, 245, 0.85);
 }
 
 .welcome-main {
@@ -160,7 +160,7 @@ body {
 }
 
 .options-container {
-  color: whitesmoke;
+  color: rgba(245, 245, 245, 0.85);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -184,8 +184,8 @@ body {
   margin: 32px 0;
 }
 
-.options-categories-list {
-  margin: 0 16px;
+.options-categories-list h2 {
+  max-width: 330px;
 }
 
 .question-options-container {
@@ -275,7 +275,7 @@ body {
 }
 
 .question-img-container {
-  border: 1px solid whitesmoke;
+  border: 1px solid rgba(245, 245, 245, 0.85);
   background: white;
   height: 300px;
   display: -webkit-box;
@@ -295,7 +295,7 @@ body {
   margin: 0 auto;
   background: #263b7b;
   padding: 20px 20px 20px 20px;
-  border: 4px solid whitesmoke;
+  border: 4px solid rgba(245, 245, 245, 0.85);
   border-radius: 15px;
   position: absolute;
 }
@@ -359,7 +359,7 @@ body {
   -webkit-box-shadow: 2px 3px #333;
           box-shadow: 2px 3px #333;
   font-size: 16px;
-  color: whitesmoke;
+  color: rgba(245, 245, 245, 0.85);
   background-color: #252d4a;
   border: 5px solid #234668;
   background: linear-gradient(#020d31, #020d31) padding-box, linear-gradient(45deg, slateblue, coral) border-box;
@@ -394,10 +394,17 @@ body {
   margin-top: 32px;
 }
 
-.details {
-  color: whitesmoke !important;
+.results-chart-container {
+  border: 1px solid white;
   border-radius: 15px;
-  background: whitesmoke;
+  padding: 4px;
+  margin: auto auto;
+}
+
+.details {
+  color: rgba(245, 245, 245, 0.85) !important;
+  border-radius: 15px;
+  background: rgba(245, 245, 245, 0.85);
   margin: 12px auto;
 }
 
@@ -409,7 +416,7 @@ body {
 }
 
 .details-question-text {
-  color: whitesmoke;
+  color: rgba(245, 245, 245, 0.85);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -478,9 +485,9 @@ details > summary::-webkit-details-marker {
 }
 
 .score-details-label {
-  margin: 4px auto;
+  margin: 8px;
   padding: 2px;
-  background: whitesmoke;
+  background: rgba(245, 245, 245, 0.85);
   border-radius: 15px;
 }
 
@@ -633,7 +640,7 @@ details > summary::-webkit-details-marker {
   }
   .welcome-text {
     opacity: 0;
-    color: whitesmoke;
+    color: rgba(245, 245, 245, 0.85);
     letter-spacing: -2px;
     font-size: 150px;
   }

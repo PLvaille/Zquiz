@@ -1,4 +1,7 @@
+import { useState } from "react";
 import star from "../assets/star.svg";
+import ResultChart from "./ResultChart";
+
 export default function ScoreBoard({
   score,
   setSeconds,
@@ -15,15 +18,6 @@ export default function ScoreBoard({
   selectedQuestionsTypes,
   iconCat,
 }) {
-  
-  //reset le quiz et les states
-  const handleReset = () => {
-    setQuestionsTypes(questionsTypes);
-    setQuestionsDifficuly(questionsDifficulties);
-    setUserReady(false);
-    // setMinutes(0);
-    // setSeconds(0);
-  };
 
   // console.log("--- qesti ----");
   //  console.log(selectedQuestions);
@@ -31,25 +25,60 @@ export default function ScoreBoard({
   // console.log(totalAnswers);
   //  console.log(selectedQuestionsTypes)
   // console.log("score");
-  // console.log(score);
+ // console.log(score);
   // console.log("cal")
   // console.log(Math.floor(score*100/totalAnswers.length));
+
+     // eslint-disable-next-line
+  const [results, setResults] = useState([]);
+  
+  const Datas = () => {
+    let datas = [];
+    selectedQuestionsTypes.forEach((type) => {
+      let acc = 0
+      totalAnswers.forEach((ans) => {
+        if(ans.isCorrect && ans.type === type){
+          acc++
+        }
+        
+      })
+      datas.push(acc)    
+    })
+
+    results.push(datas);
+    //console.log(results)
+  }
+  Datas();
+
+
+
+
 
   const calcHowManyQuestionsOfEachType = (type) => {
     let acc = 0;
     selectedQuestions.forEach((q) => {
       if (q.questionType === type) acc++;
     });
-    return `${acc}`;
+    return acc;
   };
 
   const calcTypeScore = (type) => {
     let acc = 0;
     totalAnswers.forEach((ans) => {
       if (type === ans.type && ans.isCorrect === true) acc++;
+      
     });
-    return `${acc}`;
+    return acc;
   };
+
+    //reset le quiz et les states
+    const handleReset = () => {
+      setQuestionsTypes(questionsTypes);
+      setQuestionsDifficuly(questionsDifficulties);
+      setUserReady(false);
+      // setMinutes(0);
+      // setSeconds(0);
+    };
 
   const calcTotalScore = () => {
     let calcultadScore = Math.floor((score * 100) / totalAnswers.length);
@@ -78,6 +107,7 @@ export default function ScoreBoard({
   };
 
   return (
+
     <div className="score-board">
       <div className="score-points-text">
         <h2>
@@ -85,12 +115,18 @@ export default function ScoreBoard({
         </h2>
         <h3>{calcTotalScore()}</h3>
         {/* <h4>Vous avez complété le quiz en {minutes}min {seconds}sec</h4>
-       */}
+         */}
       </div>
 
 
+      <ResultChart 
+      selectedQuestionsTypes={selectedQuestionsTypes} 
+      results={results}
+      length={totalAnswers.length/selectedQuestionsTypes.length}/>
+      
+      
       <div className="score-details-container">
-          <h4>Plus de détails 👇</h4>
+        <h4>Détails et Correction 👇</h4>
         {selectedQuestionsTypes.map((type) => (
           <details className={"score-details-label  label-" + type} key={type}>
             <summary className="summary score-details-summary">
@@ -144,7 +180,6 @@ export default function ScoreBoard({
           </details>
         ))}
       </div>
-
       <button
         className="btn btn-reset"
         id="quiz-reset-btn"

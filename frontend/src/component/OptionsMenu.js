@@ -16,12 +16,9 @@ export default function OptionsMenu({
   const defaultTypeLenght = questionsTypes.length;
   const defaultDifficultyLength = questionsDifficulties.length;
 
-  const [qtySelector, setQtySelector] = useState([
-    defaultTypeLenght * defaultDifficultyLength * 3,
-    defaultTypeLenght * defaultDifficultyLength * 2,
-    defaultTypeLenght * defaultDifficultyLength,
-  ]);
-  const [questionQty, setQuestionQty] = useState(qtySelector[0]);
+  const qtySelector = [3,2,1];
+  const [selectedQuestionQty, setSelectedQuestionQty] = useState(qtySelector[0]);
+  const [questionQty, setQuestionQty] = useState(selectedQuestionQty*selectedQuestionsDifficulties.length*selectedQuestionsTypes.length)
 
   const handleCheckBox = (e, array) => {
     //si l'option est (re)checké - check par défaut
@@ -54,19 +51,11 @@ export default function OptionsMenu({
   };
 
   const handleReadyClick = () => {
-    // console.log("---- default ---- ");
-    // console.log(defaultTypeLenght);
-    // console.log(defaultDifficultyLength);
-    // console.log("----------------  ");
-    // console.log(selectedQuestionsTypes);
-    // console.log(selectedQuestionsDifficulties);
-    //console.log("quantité de questions : " + questionQty);
-    //console.log("index choisi " + indexQty);
-
     //index selectionné dans la liste
     let indexQty = document.querySelector(
       ".options-questions-quantity"
     ).selectedIndex;
+    console.log(indexQty)
 
     //cas ou aucune selection de checkbox
     if (
@@ -108,7 +97,7 @@ export default function OptionsMenu({
 
       //cas avec 2 question/diff/type
       else if (indexQty === 1) {
-        console.log("index 1 = 2 questions");
+        // console.log("index 1 = 2 questions");
         let questionOfEachDiff = 2;
         let temp = questionSelector(questions);
         let randomizedQ = createRandomArray(
@@ -123,7 +112,7 @@ export default function OptionsMenu({
       //cas avec 1 question/diff/type
       else if (indexQty === 2) {
         let questionOfEachDiff = 1;
-        console.log("index 2 = 1 question");
+        // console.log("index 2 = 1 question");
         let temp = questionSelector(questions);
         let randomizedQ = createRandomArray(
           temp,
@@ -181,7 +170,7 @@ export default function OptionsMenu({
         });
       });
     }
-    console.log(randomizedArray);
+    //console.log(randomizedArray);
     return randomizedArray;
   };
 
@@ -200,46 +189,22 @@ export default function OptionsMenu({
     let qty = selectedQuestionsTypes
       ? selectedQuestionsTypes.length
       : defaultTypeLenght;
-    // console.log("diff")
-    // console.log(diff);
-    // console.log("qty")
-    // console.log(qty);
-    // console.log("---- default ---- ");
-    // console.log(defaultTypeLenght);
-    // console.log(defaultDifficultyLength);
-    // console.log("----------------  ");
-    // console.log(selectedQuestionsTypes.length);
-    //  console.log("selected diff")
-    //  console.log(selectedQuestionsDifficulties);
-    //  console.log(selectedQuestionsDifficulties.length);
-    // console.log(questionsTypes);
-    // console.log("------- array --------");
-    // console.log(array);;
-    let values = [];
-    //si pas de selection : alert
     if (diff === 0 || qty === 0) {
       setAlertMsg(true);
     }
-    //sinon : push les choix de qty
     else {
       setAlertMsg(false);
-      // i = 3 car il y a au minimum 3 questions / difficultés et par types
-      for (let i = 3; i > 0; i--) {
-        values.push(qty * diff * i);
-      }
+      setQuestionQty(selectedQuestionQty*selectedQuestionsDifficulties.length*selectedQuestionsTypes.length)
     }
-    //console.log(values);
-    setQtySelector(values);
-    setQuestionQty(values[0]);
   };
-
   const handleQty = (value) => {
-    setQuestionQty(value);
+    setSelectedQuestionQty(value);
+    setQuestionQty(value*selectedQuestionsDifficulties.length*selectedQuestionsTypes.length)
   };
 
   return (
     <div className="options-container">
-      <h1>Options du Quiz</h1>
+      <h1>Peronnalisez votre Quiz</h1>
       <div className="options-menu">
         <div className="options-categories-list">
           <h2>Thèmes des questions</h2>
@@ -289,22 +254,24 @@ export default function OptionsMenu({
             </div>
           ))}
           <div className="options-categories-list">
-              <h2>
-                <label htmlFor="options-questions-quantity">
-                  Nombre de question :
-                </label>
-              </h2>
-              <select
-                value={questionQty}
-                className="options-questions-quantity"
-                onChange={(e) => handleQty(e.target.value)}
-              >
-                {qtySelector.map((qty) => (
-                  <option key={qty} id={"option-" + qtySelector.indexOf(qty)}>
-                    {qty} questions, {qty/selectedQuestionsDifficulties.length/selectedQuestionsTypes.length} par niveau
-                  </option>
-                ))}
-              </select>
+            <label htmlFor="options-questions-quantity">
+              <h2>Nombre de questions par difficulté :</h2>
+            </label>
+            <select
+              className="options-questions-quantity"
+              onChange={(e) => handleQty(e.target.selectedOptions[0].id)}
+            >
+              {qtySelector.map((qty) => (
+                <option
+                  key={qty}
+                  id={qty}
+                  className={"option-" + qtySelector.indexOf(qty)}
+                >
+                  {qty} questions
+                </option>
+              ))}
+            </select>
+            <div>Total : {questionQty} questions</div>
           </div>
         </div>
       </div>
